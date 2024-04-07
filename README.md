@@ -4,6 +4,17 @@ The project demonstrates a siimple Non-fungible Token (NFT) use case that allows
 
 An existiing, archiived service [1] was leveraged in creating this project.
 
+## Installation:
+
+Follow the installation guide in the minty folder observing some slight changes below.
+
+1. Start ipfs daemon with `ipfs daemon` or use tthe automatically started IPFS desktop
+2. Change http://localhost:5001 to http://127.0.0.1:5001 in minty/default.json
+3. Ensure `npx hardhat noode` binds to hostname 127.0.0.1:8545 and not ::1:8545 (or use `npx hardhat node --hostname 127.0.0.1`)
+4. If `./start-local-environment.sh` doesn't work, then start the node manually with `npx hardhat node`
+5. Compile contract with: `npx hardhat compile`
+6. Change name and symbol of the nint from JLP using command `minty deploy -o minty-deployment.json -n SolContract -s SOLC`
+
 The project demos a simple workflow of the following
 
 1. NFT mint (via the `mint` command provided by [1])
